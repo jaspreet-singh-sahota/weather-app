@@ -21,3 +21,5 @@ icon.add(document.getElementById("icon7"), 'PARTLY_CLOUDY_NIGHT');
 icon.add(document.getElementById("icon8"), 'PARTLY_CLOUDY_NIGHT');
 icon.add(document.getElementById("icon9"), 'PARTLY_CLOUDY_NIGHT');
 icon.play();
+
+
