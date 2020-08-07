@@ -1,0 +1,175 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: beige;
+  background-image: url('https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  background-size: cover;
+
+}
+.container{
+  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+  position: relative;
+  width: 40%;
+  height: 100Vh;
+  text-align: center;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-top: -1vh;
+}
+
+.city {
+  text-align: start;
+  margin-top: 4vh;
+  margin-left: 5%;
+}
+.temprature {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+.temp-text {
+  font-size: 50px;
+}
+
+.temp-text span {
+  font-size: 40px;
+}
+
+.temp-report {
+  margin-top: -40px;
+}
+
+#icon1 {
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  margin-top: 5vh;
+}
+
+.description {
+  font-size: 0.85em;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 55vh;
+  line-height: 35px;
+}
+
+.city-search {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  outline: none;
+  border: 1px solid #777;
+  border-radius: 16px 0 16px 0;
+  border-bottom: 2px solid white;
+  padding: 10px 15px;
+  width: 50%;
+  background-color: transparent;
+  color: white;
+}
+
+.city-search::placeholder {
+ color: #999;
+ text-align: center;
+}
+
+.city-search::-webkit-input-placeholder {
+ text-align: center;
+}
+
+.switch {
+  top: 4vh;
+  right: 5%;
+  position: absolute;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+}
+
+.switch::before {
+  position: absolute;
+  content: "F";
+  font-size: 30px;
+  left: 12px;
+  top: 3px;
+  z-index: 1;
+  color: #222;
+}
+
+.switch::after {
+  position: absolute;
+  content: "C";
+  font-size: 30px;
+  right: 10px;
+  top: 3px;
+  z-index: 1;
+  color: #222;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  border: 1px solid white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 36px;
+  width: 36px;
+  left: 0.5px;
+  bottom: 1.5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(40px);
+  -ms-transform: translateX(26px);
+  transform: translateX(40px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.toggle {
+  position: absolute;
+  display: flex;
+  width: 85px;
+  justify-content: space-around;
+}
