@@ -95,7 +95,7 @@ window.addEventListener('load', () => {
       const lat = position.coords.latitude;
       const long = position.coords.longitude;
 
-      const api = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=metric`);
+      const api = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=metric`);
       const data = await api.json();
 
       searchCity.addEventListener('keypress', async (e) => {
@@ -104,7 +104,7 @@ window.addEventListener('load', () => {
             e.preventDefault();
             const searchValue = e.target.value;
             if (searchValue !== '') {
-              const searchResult = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${key}&units=metric`);
+              const searchResult = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${key}&units=metric`);
               const data = await searchResult.json();
 
               updateData(data);
