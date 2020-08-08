@@ -3,7 +3,7 @@ const weatherCard = (() => {
   divCard.setAttribute('class', 'card');
   const divCity = document.createElement('div');
   divCity.setAttribute('class', 'city');
-  divCity.innerHTML = '<h1>Delhi</h1>'
+  divCity.innerHTML = '<h1 class="location"></h1>'
   
   const canvas = document.createElement('canvas');
   canvas.id = 'icon9'
@@ -12,7 +12,7 @@ const weatherCard = (() => {
   
   const divTemperature = document.createElement('div');
   divTemperature.setAttribute('class', 'temperature');
-  divTemperature.innerHTML = '<h1 class="temp-text">15°<span>C</span></h1> <h2 class="temp-report">Overcast temp</h2>'
+  divTemperature.innerHTML = '<h1 class="temp-text">Enable your location</h1> <h2 class="temp-report"></h2>'
   
   const form = document.createElement('form')
   const input = document.createElement('input')
@@ -22,7 +22,7 @@ const weatherCard = (() => {
   
   const divDescription = document.createElement('div');
   divDescription.setAttribute('class', 'description');
-  divDescription.innerHTML = '<h2>Wind Speed <span> 5km/hr</span></h2><h2>Humidity <span>10%</span> </h2><h2> Min Temp <span>5km/hr</span></h2>  <h2>Max Temp <span>10%</span> </h2>'
+  divDescription.innerHTML = '<h2 class="humidity"></h2><h2 class="wind-speed"></h2><h2 class="min-temp"></h2> <h2 class="max-temp"></h2>'
 
   form.appendChild(input)
   divCard.appendChild(divCity)
