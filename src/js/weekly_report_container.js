@@ -37,7 +37,7 @@ const weeklyReport = (() => {
   divCardFooter.appendChild(friday);
   divCardFooter.appendChild(saturday);
   divCardFooter.appendChild(sunday);
-  divCardFooterWrapper.appendChild(divCardFooter)
+  divCardFooterWrapper.appendChild(divCardFooter);
 
   return divCardFooterWrapper;
 })();

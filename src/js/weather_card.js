@@ -31,9 +31,9 @@ const weatherCard = (() => {
   divCard.appendChild(canvas);
   divCard.appendChild(divTemperature);
   divCard.appendChild(form);
-  divDescriptionWrapper.appendChild(divDescription)
+  divDescriptionWrapper.appendChild(divDescription);
   divCard.appendChild(divDescriptionWrapper);
-  
+
   return divCard;
 })();
 
