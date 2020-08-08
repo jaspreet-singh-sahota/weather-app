@@ -5,7 +5,7 @@ body {
   color: beige;
   background-image: url('https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg?auto=compress&cs=tinysrgb&h=750&w=1260');
   background-size: cover;
-  font-size: 0.885em;
+  font-size: 0.9em;
 }
 
 .container {
@@ -26,7 +26,7 @@ body {
 .card-footer-wrapper {
   position: absolute;
   width: 100%;
-  bottom: 0%;
+  bottom: 3%;
 }
 
 .card-footer {
@@ -78,7 +78,7 @@ body {
 
 .description-wrapper {
   position: absolute;
-  bottom: 20%;
+  bottom: 23%;
   width: 100%;
 }
 
