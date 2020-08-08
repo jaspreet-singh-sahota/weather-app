@@ -47,29 +47,38 @@ const iconWeatherCheck = (weatherIcon) => {
   }
 }
 
+const toggleTemperatureButton = document.querySelector('.switch')
 const key = 'bd5c60bbfbbd8f6f50ec92c23004ec08'
+
+let toggleButtonValue = {}
+
+toggleTemperatureButton.addEventListener('change', (e) => {
+  toggleButtonValue['checked'] = e.target.checked;
+  convertTemp()
+
+})
 
 window.addEventListener('load', () => {
   let lat;
   let long;
-
+  
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async function (position) {
       const searchCity = document.querySelector('form')
       lat = position.coords.latitude;
       long = position.coords.longitude;
-
+      
       const api = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=metric`)
       let data = await api.json();
-  
+      
       searchCity.addEventListener('keypress', async (e) => {
         if (e.keyCode == 13) {
           e.preventDefault()
           let searchValue = e.target.value;
-
+          
           const searchResult = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${key}&units=metric`)
           let data = await searchResult.json()
-
+          
           updateData(data)
           icon.remove('icon9')
           icon.set('icon9', iconWeatherCheck(data.weather[0]));
@@ -83,17 +92,17 @@ window.addEventListener('load', () => {
   }
 });
 
+
 const updateData = (data) => {
   const celsius = data.main.temp;
-  const farenheit = (celsius * 1.8) + 32;
 
   const windSpeedConvert = Math.floor(data.wind.speed)
 
   location.textContent = data.name;
   currentTemp.innerHTML = `${celsius} °<span>C</span>`
-  weatherReport.textContent = data.weather[0].description
   minTemp.innerHTML = `Min Temp :- ${data.main.temp_min}°<span>C</span> `
   maxTemp.innerHTML = `Max Temp :- ${data.main.temp_max}°<span>C</span> `
+  weatherReport.textContent = data.weather[0].description
   humidity.innerHTML = `Humidity :- ${data.main.humidity}% `
   windSpeed.innerHTML = `Wind Speed :- ${windSpeedConvert}<span>Km/hr</span> `
 }

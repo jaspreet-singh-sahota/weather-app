@@ -104,9 +104,9 @@ body {
 
 .switch::before {
   position: absolute;
-  content: "F";
+  content: "C";
   font-size: 30px;
-  left: 12px;
+  left: 8px;
   top: 3px;
   z-index: 1;
   color: #222;
@@ -114,7 +114,7 @@ body {
 
 .switch::after {
   position: absolute;
-  content: "C";
+  content: "F";
   font-size: 30px;
   right: 10px;
   top: 3px;
