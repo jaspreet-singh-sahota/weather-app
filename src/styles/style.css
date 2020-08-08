@@ -16,7 +16,7 @@ body {
 
 .card {
   position: relative;
-  width: 40%;
+  width: 42%;
   height: 100vh;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.7);
@@ -180,4 +180,62 @@ input:checked + .slider::before {
   display: flex;
   width: 85px;
   justify-content: space-around;
+}
+
+@media only screen and (max-width: 1150px) {
+  .card {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .card {
+    width: 70%;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+
+  body {
+    font-size: 0.7em;
+  }
+
+  .city-search {
+    font-size: 1.2rem;
+  }
+
+  .description {
+  margin-top: 35vh;
+  line-height: 25px;
+}
+}
+
+@media only screen and (max-width: 412px) {
+  .card {
+    height: 100vh
+  }
+
+  .container {
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .card {
+    height: 100%
+  }
+
+  .container {
+    height: 100%;
+  }
 }

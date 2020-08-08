@@ -72,7 +72,6 @@ const convertTemp = () => {
 
 const updateData = (data) => {
   const celsius = data.main.temp;
-
   const windSpeedConvert = Math.floor(data.wind.speed);
 
   location.textContent = data.name;
@@ -90,14 +89,11 @@ toggleTemperatureButton.addEventListener('change', (e) => {
 });
 
 window.addEventListener('load', () => {
-  let lat;
-  let long;
-
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async (position) => {
       const searchCity = document.querySelector('form');
-      lat = position.coords.latitude;
-      long = position.coords.longitude;
+      const lat = position.coords.latitude;
+      const long = position.coords.longitude;
 
       const api = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=metric`);
       const data = await api.json();
