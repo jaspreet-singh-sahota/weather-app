@@ -1,4 +1,6 @@
 const weeklyReport = (() => {
+  const divCardFooterWrapper = document.createElement('div');
+  divCardFooterWrapper.setAttribute('class', 'card-footer-wrapper');
   const divCardFooter = document.createElement('div');
   divCardFooter.setAttribute('class', 'card-footer');
 
@@ -35,8 +37,9 @@ const weeklyReport = (() => {
   divCardFooter.appendChild(friday);
   divCardFooter.appendChild(saturday);
   divCardFooter.appendChild(sunday);
+  divCardFooterWrapper.appendChild(divCardFooter)
 
-  return divCardFooter;
+  return divCardFooterWrapper;
 })();
 
 export default weeklyReport;

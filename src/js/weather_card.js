@@ -22,6 +22,8 @@ const weatherCard = (() => {
 
   const divDescription = document.createElement('div');
   divDescription.setAttribute('class', 'description');
+  const divDescriptionWrapper = document.createElement('div');
+  divDescriptionWrapper.setAttribute('class', 'description-wrapper');
   divDescription.innerHTML = '<h2 class="humidity"></h2><h2 class="wind-speed"></h2><h2 class="min-temp"></h2> <h2 class="max-temp"></h2>';
 
   form.appendChild(input);
@@ -29,8 +31,9 @@ const weatherCard = (() => {
   divCard.appendChild(canvas);
   divCard.appendChild(divTemperature);
   divCard.appendChild(form);
-  divCard.appendChild(divDescription);
-
+  divDescriptionWrapper.appendChild(divDescription)
+  divCard.appendChild(divDescriptionWrapper);
+  
   return divCard;
 })();
 
