@@ -83,17 +83,3 @@ window.addEventListener('load', () => {
   }
 });
 
-const updateData = (data) => {
-  const celsius = data.main.temp;
-  const farenheit = (celsius * 1.8) + 32;
-
-  const windSpeedConvert = Math.floor(data.wind.speed)
-
-  location.textContent = data.name;
-  currentTemp.innerHTML = `${celsius} °<span>C</span>`
-  weatherReport.textContent = data.weather[0].description
-  minTemp.innerHTML = `Min Temp :- ${data.main.temp_min}°<span>C</span> `
-  maxTemp.innerHTML = `Max Temp :- ${data.main.temp_max}°<span>C</span> `
-  humidity.innerHTML = `Humidity :- ${data.main.humidity}% `
-  windSpeed.innerHTML = `Wind Speed :- ${windSpeedConvert}<span>Km/hr</span> `
-}
