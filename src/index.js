@@ -92,6 +92,25 @@ window.addEventListener('load', () => {
   }
 });
 
+const convertTemp = () => {
+  const temp = currentTemp.textContent.split(' ')[0]
+  const fahrenheit = ((Number(temp) * 9 / 5) + 32).toFixed(2);
+  const celsius = ((Number(temp) - 32) * 5 / 9).toFixed;
+
+  const minTemperature = minTemp.textContent.split(' ')[3].split('°')[0]
+  console.log(minTemperature)
+  const minFahrenheit = ((Number(minTemperature) * 9 / 5) + 32).toFixed(2);
+  const minCelsius = ((Number(minTemperature) - 32) * 5 / 9).toFixed(2);
+
+  const maxTemperature = maxTemp.textContent.split(' ')[3].split('°')[0]
+  console.log(maxTemperature)
+  const maxFahrenheit = ((Number(maxTemperature) * 9 / 5) + 32).toFixed(2);
+  const maxCelsius = ((Number(maxTemperature) - 32) * 5 / 9).toFixed(2);
+
+  currentTemp.innerHTML = toggleButtonValue['checked'] === false ? `${celsius} °<span>C</span>` : `${fahrenheit} °<span>F</span>`
+  minTemp.innerHTML = toggleButtonValue['checked'] === false ? `Min Temp :- ${minCelsius}°<span>C</span> ` : `Min Temp :- ${minFahrenheit}°<span>F</span> `
+  maxTemp.innerHTML = toggleButtonValue['checked'] === false ? `Max Temp :- ${maxCelsius}°<span>C</span> ` : `Max Temp :- ${maxFahrenheit}°<span>F</span> `
+}
 
 const updateData = (data) => {
   const celsius = data.main.temp;
