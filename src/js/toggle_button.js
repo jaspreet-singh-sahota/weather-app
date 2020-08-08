@@ -2,14 +2,14 @@ const toggleButton = (() => {
   const labelToggle = document.createElement('label');
   labelToggle.setAttribute('class', 'switch');
   const inputToggle = document.createElement('input');
-  inputToggle.type = 'checkBox'
+  inputToggle.type = 'checkBox';
   const span = document.createElement('span');
   span.setAttribute('class', 'slider round');
 
-  labelToggle.appendChild(inputToggle)
-  labelToggle.appendChild(span)
+  labelToggle.appendChild(inputToggle);
+  labelToggle.appendChild(span);
 
-  return labelToggle
-})()
+  return labelToggle;
+})();
 
-export default toggleButton
+export default toggleButton;
