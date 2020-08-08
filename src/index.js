@@ -67,8 +67,7 @@ window.addEventListener('load', () => {
           e.preventDefault()
           let searchValue = e.target.value;
 
-          const searchResult = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${key}&units=metric`)
-          let data = await searchResult.json()
+          
 
           updateData(data)
           icon.remove('icon9')
