@@ -38,7 +38,7 @@ const iconWeatherCheck = (weatherIcon) => {
     return 'snow';
   } if (weatherIcon.main === 'Rain' || weatherIcon.main === 'Thunderstorms') {
     return 'rain';
-  } if (weatherIcon.main === 'Clouds' || weatherIcon.main === 'Haze' || weatherIcon.main === 'Mist' ) {
+  } if (weatherIcon.main === 'Clouds' || weatherIcon.main === 'Haze' || weatherIcon.main === 'Mist') {
     return 'cloudy';
   } if (weatherIcon.icon === '01n' || weatherIcon.icon === '50n') {
     return 'clear_night';
