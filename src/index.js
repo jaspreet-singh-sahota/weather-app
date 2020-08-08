@@ -90,7 +90,9 @@ window.addEventListener('load', () => {
             }
           }
         } catch (err) {
-          
+          e.target.value = ''
+          placeholderValue.placeholder = 'Enter a valid city name'
+          placeholderValue.classList.add('error')
         }
       })
       updateData(data)
