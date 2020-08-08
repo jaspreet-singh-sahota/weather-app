@@ -59,7 +59,7 @@ Note:- There is only one Div in the HTML page, the whole project is built from J
 
 ## Live Link (Netlify)
 
-[Click Here](https://vigorous-hoover-ff1eb2.netlify.app)
+[Click Here](https://jassi-weather-app.netlify.app/)
 
 <!-- BUILD WITH -->
 ## Built With
