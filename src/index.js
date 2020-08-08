@@ -36,14 +36,14 @@ const iconWeatherCheck = (weatherIcon) => {
     return 'wind';
   } if (weatherIcon.main === 'Snow') {
     return 'snow';
-  } if (weatherIcon.main === 'Rain') {
+  } if (weatherIcon.main === 'Rain' || weatherIcon.main === 'Thunderstorms') {
     return 'rain';
+  } if (weatherIcon.main === 'Clouds' || weatherIcon.main === 'Haze' || weatherIcon.main === 'Mist' ) {
+    return 'cloudy';
   } if (weatherIcon.icon === '01n' || weatherIcon.icon === '50n') {
     return 'clear_night';
   } if (weatherIcon.icon === '01d') {
     return 'clear_day';
-  } if (weatherIcon.main === 'Clouds') {
-    return 'cloudy';
   }
   return 'clear_day';
 };

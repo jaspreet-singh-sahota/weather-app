@@ -202,13 +202,13 @@ input:checked + .slider::before {
 
 @media only screen and (max-width: 992px) {
   .card {
-    width: 70%;
+    width: 60%;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .card {
-    width: 80%;
+    width: 70%;
   }
 }
 
@@ -223,6 +223,7 @@ input:checked + .slider::before {
 
   .city-search {
     font-size: 1.2rem;
+    z-index: 1;
   }
 
   .description {
