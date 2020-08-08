@@ -10,6 +10,7 @@ weatherCard.appendChild(weeklyReport)
 weatherCard.appendChild(toggleButton)
 container.appendChild(weatherCard)
 
+const placeholderValue = document.querySelector('.city-search')
 let location = document.querySelector('.location')
 let currentTemp = document.querySelector('.temp-text')
 let weatherReport = document.querySelector('.temp-report')
@@ -72,22 +73,27 @@ window.addEventListener('load', () => {
       let data = await api.json();
       
       searchCity.addEventListener('keypress', async (e) => {
-        if (e.keyCode == 13) {
-          e.preventDefault()
-          let searchValue = e.target.value;
-          
-          const searchResult = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${key}&units=metric`)
-          let data = await searchResult.json()
-          
-          updateData(data)
-          icon.remove('icon9')
-          icon.set('icon9', iconWeatherCheck(data.weather[0]));
-          e.target.value = ''
-        }
+
+          if (e.keyCode == 13) {
+            e.preventDefault()
+            let searchValue = e.target.value;
+            if (searchValue !== '') {
+              const searchResult = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${key}&units=metric`)
+              let data = await searchResult.json()
+              
+              updateData(data)
+              icon.remove('icon9')
+              icon.set('icon9', iconWeatherCheck(data.weather[0]));
+              placeholderValue.classList.remove('error')
+              placeholderValue.placeholder = 'Enter a city name'
+              e.target.value = ''
+            }
+          }
+       
       })
-      
       updateData(data)
       icon.add('icon9', iconWeatherCheck(data.weather[0]));
+
     })
   }
 });
@@ -95,15 +101,13 @@ window.addEventListener('load', () => {
 const convertTemp = () => {
   const temp = currentTemp.textContent.split(' ')[0]
   const fahrenheit = ((Number(temp) * 9 / 5) + 32).toFixed(2);
-  const celsius = ((Number(temp) - 32) * 5 / 9).toFixed;
+  const celsius = ((Number(temp) - 32) * 5 / 9).toFixed(2);
 
   const minTemperature = minTemp.textContent.split(' ')[3].split('°')[0]
-  console.log(minTemperature)
   const minFahrenheit = ((Number(minTemperature) * 9 / 5) + 32).toFixed(2);
   const minCelsius = ((Number(minTemperature) - 32) * 5 / 9).toFixed(2);
 
   const maxTemperature = maxTemp.textContent.split(' ')[3].split('°')[0]
-  console.log(maxTemperature)
   const maxFahrenheit = ((Number(maxTemperature) * 9 / 5) + 32).toFixed(2);
   const maxCelsius = ((Number(maxTemperature) - 32) * 5 / 9).toFixed(2);
 

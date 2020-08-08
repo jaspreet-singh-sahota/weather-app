@@ -89,6 +89,12 @@ body {
  text-align: center;
 }
 
+.error::placeholder {
+ color: red;
+ text-align: center;
+ font-size: 0.89em;
+}
+
 .city-search::-webkit-input-placeholder {
  text-align: center;
 }
