@@ -73,7 +73,7 @@ window.addEventListener('load', () => {
       let data = await api.json();
       
       searchCity.addEventListener('keypress', async (e) => {
-
+        try {
           if (e.keyCode == 13) {
             e.preventDefault()
             let searchValue = e.target.value;
@@ -89,7 +89,11 @@ window.addEventListener('load', () => {
               e.target.value = ''
             }
           }
-       
+        } catch (err) {
+          e.target.value = ''
+          placeholderValue.placeholder = 'Enter a valid city name'
+          placeholderValue.classList.add('error')
+        }
       })
       updateData(data)
       icon.add('icon9', iconWeatherCheck(data.weather[0]));
