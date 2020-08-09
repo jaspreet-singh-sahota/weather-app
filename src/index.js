@@ -2,6 +2,7 @@ import './styles/style.css';
 import weatherCard from './js/weather_card';
 import weeklyReport from './js/weekly_report_container';
 import toggleButton from './js/toggle_button';
+import fetchData from './js/logic';
 
 const Skycons = require('skycons')(window);
 
@@ -104,9 +105,8 @@ window.addEventListener('load', () => {
             e.preventDefault();
             const searchValue = e.target.value;
             if (searchValue !== '') {
-              const searchResult = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${key}&units=metric`);
-              const data = await searchResult.json();
-
+              const data = await fetchData(searchValue, key)
+              
               updateData(data);
               icon.remove('icon9');
               icon.set('icon9', iconWeatherCheck(data.weather[0]));
