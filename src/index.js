@@ -3,6 +3,7 @@ import weatherCard from './js/weather_card';
 import weeklyReport from './js/weekly_report_container';
 import toggleButton from './js/toggle_button';
 import fetchData from './js/logic';
+import geoLocation from './js/logic_geoloaction';
 
 const Skycons = require('skycons')(window);
 
@@ -96,8 +97,7 @@ window.addEventListener('load', () => {
       const lat = position.coords.latitude;
       const long = position.coords.longitude;
 
-      const api = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=metric`);
-      const data = await api.json();
+      const data = await geoLocation(lat, long, key)
 
       searchCity.addEventListener('keypress', async (e) => {
         try {
