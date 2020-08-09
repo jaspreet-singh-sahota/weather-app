@@ -97,7 +97,7 @@ window.addEventListener('load', () => {
       const lat = position.coords.latitude;
       const long = position.coords.longitude;
 
-      const data = await geoLocation(lat, long, key)
+      const data = await geoLocation(lat, long, key);
 
       searchCity.addEventListener('keypress', async (e) => {
         try {
@@ -105,8 +105,8 @@ window.addEventListener('load', () => {
             e.preventDefault();
             const searchValue = e.target.value;
             if (searchValue !== '') {
-              const data = await fetchData(searchValue, key)
-              
+              const data = await fetchData(searchValue, key);
+
               updateData(data);
               icon.remove('icon9');
               icon.set('icon9', iconWeatherCheck(data.weather[0]));
