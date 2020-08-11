@@ -51,9 +51,10 @@ In this project, I have to build a Weather App. This project is for practising t
 
 ### Standout Feature:-
 
-  - On page load, it with show the weather report of the user's location
+  - On page load, it will show the weather report of the user's location
   - User can search weather report of different cities
   - User can toggle temperature between Calvin or Fahrenheit
+  - Animated icons
 
 Note:- There is only one Div in the HTML page, the whole project is built from JavaScript(DOM)
 
